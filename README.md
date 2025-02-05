@@ -1,50 +1,103 @@
-# React + TypeScript + Vite
+# Product Gallery Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive product gallery application built with React, TypeScript, and Redux Toolkit.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔍 Real-time search functionality
+- 🏷️ Category and price filtering
+- 📱 Fully responsive design
+- 🎯 Type-safe with TypeScript
+- 🔄 Redux state management
+- ⚡ Optimized performance
+- 🧪 Comprehensive testing
+- 💅 Modern UI with Tailwind CSS
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
 
-- Configure the top-level `parserOptions` property like this:
+- Node.js (v14 or higher)
+- npm or yarn
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Victoria-27/product-gallery.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+2. Install dependencies:
+```bash
+npm install
 ```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+## Project Structure
+
+```
+src/
+├── api/              # API calls and configurations
+├── components/       # React components
+├── hooks/           # Custom React hooks
+├── pages/           # React pages
+├── store/           # Redux store and slices
+├── types/           # TypeScript definitions
+└
+```
+
+
+## Performance Optimizations
+
+- Redux state management for efficient updates
+- Implement virtual scrolling for large product lists
+
+## Responsive Design
+
+The application is fully responsive with breakpoints:
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
+
+## State Management
+
+Redux Toolkit is used for state management with the following features:
+- Centralized product state
+- Async thunks for API calls
+- Optimized filtering logic
+- Type-safe actions and reducers
+
+## Error Handling
+
+- API error handling
+- Loading states
+
+# Component Overview
+
+## ProductGallery
+
+- Main container component
+- Manages product fetching and filtering
+- Handles layout and responsive design
+
+## FilterSection
+
+- Contains all filtering controls
+- Manages search input and category selection
+- Handles price range filtering
+
+## ProductCard
+
+- Displays individual product information
+- Handles hover effects and click interactions
+- Shows product image, title, price, and rating
+
+## ProductModal
+
+- Shows detailed product information
+- Handles image gallery and description
+- Manages user interactions and animations
