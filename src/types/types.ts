@@ -50,3 +50,26 @@ export interface Product {
     value?: number;
     displayValue?: boolean;
   }
+
+  export interface FilterSectionProps {
+    filters: {
+      category: string;
+      minPrice: number;
+      maxPrice: number;
+    };
+    categories: string[];
+    searchTerm: string;
+    onFilterChange: (filters: FilterSectionProps['filters']) => void;
+    onSearch: (term: string) => void;
+  }
+
+  export interface ProductCardProps {
+    product: Product;
+    onClick: (product: Product) => void;
+    className: string;
+  }
+
+  export interface ProductModalProps {
+    product: Product;
+    onClose: () => void;
+  }

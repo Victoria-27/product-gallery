@@ -20,7 +20,6 @@ export const fetchProductsAsync = createAsyncThunk(
   "products/fetchProducts",
   async () => {
     const response = await fetchProducts();
-    console.log(response);
     return response;
   }
 );
@@ -30,8 +29,6 @@ const filterProducts = (
   searchTerm: string,
   filters: FilterOptions
 ) => {
-  console.log(filters);
-  console.log(searchTerm);
   const filtered = products.filter((product) => {
     const searchMatch =
       product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
