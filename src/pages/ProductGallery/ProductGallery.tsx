@@ -7,6 +7,8 @@ import { Product } from "../../types/types";
 import { RootState, useAppDispatch, useAppSelector } from "../../store/store";
 import { fetchProductsAsync, setFilters, setSearchTerm, setSelectedProduct } from "../../store/productSlice";
 import { ProductModal } from "../ProductModal/ProductModal";
+import StoreHeader from "../StoreHeader/StoreHeader";
+
 
 // Animation variants
 const fadeInScale = {
@@ -125,9 +127,16 @@ const ProductGallery: React.FC = () => {
   const isLoading = status === "loading";
 
   return (
-    <div className="min-h-screen w-full bg-gray-50 p-4">
+    <div className="min-h-screen w-full bg-gray-50">
+    <StoreHeader />
+    
+    <div className="p-4">
       <div className="w-full mx-auto">
-        <div className="mb-8 bg-white rounded-lg p-4 shadow">
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-8 bg-white rounded-lg p-4 shadow-md"
+        >
           <FilterSection
             filters={filters}
             categories={categories}
@@ -135,7 +144,7 @@ const ProductGallery: React.FC = () => {
             onFilterChange={handleFilterChange}
             onSearch={handleSearchChange}
           />
-        </div>
+        </motion.div>
 
         {isLoading ? (
           <LoadingSpinner />
@@ -158,6 +167,7 @@ const ProductGallery: React.FC = () => {
         {showScrollTop && <ScrollToTopButton onClick={scrollToTop} />}
       </div>
     </div>
+  </div>
   );
 };
 
